@@ -1,0 +1,17 @@
+[package]
+name = "mouse-speed-analyzer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+multiinput = "0.1.0"
+eframe = "0.31.1"
+egui = "0.31.1"
+egui_plot = "0.31"
+
+[profile.release]
+opt-level = 'z'     # Optimize for size
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Reduce parallel code generation units to increase optimization
+panic = 'abort'     # Remove panic unwinding code
+strip = true        # Strip symbols from binary
