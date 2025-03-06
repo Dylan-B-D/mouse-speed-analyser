@@ -215,6 +215,11 @@ impl eframe::App for MouseApp {
                 }
 
                 ui.label("Window for averaging speed (ms):");
+                ui.add(
+                    egui::TextEdit::singleline(&mut self.window_duration_string)
+                        .desired_width(60.0)
+                        .hint_text("Speed calculation window"),
+                );
             });
 
             ui.label(format!(
